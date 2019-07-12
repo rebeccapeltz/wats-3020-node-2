@@ -15,16 +15,19 @@ if (isNaN(input) || !Number.isInteger(input)) {
   process.exit(1)
 }
 
+function fizzbuzz(n){
+  if (n % 15 === 0) {
+    return "fizzbuzz"
+  } else if (n % 3 === 0) {
+    return "fizz"
+  } else if (n % 5 === 0) {
+    return "buzz"
+  } else {
+    return ""
+  }
+}
+
 // iterate from 1 to the value of input
 for (let i = 1; i <= input; i++) {
-  //provide for tests for divisible for 3,5, and 15 to create desired output
-  if (i % 15 === 0) {
-    console.log(`${i} fizzbuzz`)
-  } else if (i % 3 === 0) {
-    console.log(`${i} fizz`)
-  } else if (i % 5 === 0) {
-    console.log(`${i} buzz`)
-  } else {
-    console.log(`${i}`)
-  }
+  console.log(`${i}: ${fizzbuzz(i)}`)
 }
